@@ -80,15 +80,6 @@ float inverted_pendulum::InvertedPendulumUpdate(float angle_encoder, float posit
 {
 	AngleLoopUpdate(angle_encoder);
 	PositionLoopUpdate(position_encoder);
-	/* range limit */
-
-	if (AngleOutput > 0)
-	{
-		AngleOutput += 255 * 0.05;
-	}else if (AngleOutput < 0)
-	{
-		AngleOutput -= 255 * 0.05;
-	}
 
 	if (AngleOutput > AngleOutputLimit)
 	{
